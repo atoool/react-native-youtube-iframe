@@ -122,24 +122,36 @@ export const MAIN_SCRIPT = (
       body {
         margin: 0;
       }
-      .container {
+       .container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        display: flex;
+  justify-content: center;
+      }
+      .containers {
         position: relative;
         width: 100%;
         height: 0;
         padding-bottom: 56.25%;
       }
       .video {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+        position: absolute;
+        top: -80%;
+        height: 250%;
+      }
+      .videos{
+        position: absolute;
+          top: -80%;
+          height: 250%;
+          width:100%
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="video" id="player" />
+    <div class="${loop?'containers':'container'}">
+      <div class="${loop?'videos':'video'}" id="player" />
     </div>
 
     <script>
